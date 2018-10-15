@@ -273,6 +273,16 @@ public class TrackedTorrent implements TorrentHash {
     return new TrackedTorrent(torrentMetadata.getInfoHash());
   }
 
+  /**
+   * Load a tracked torrent from the given torrent metadata.
+   *
+   * @param torrentMetadata  Torrent information created from file
+   * @throws IOException  When the torrent file cannot be read.
+   */
+  public static TrackedTorrent load(TorrentMetadata torrentMetadata) throws IOException {
+    return new TrackedTorrent(torrentMetadata.getInfoHash());
+  }
+
   @Override
   public byte[] getInfoHash() {
     return this.info_hash;
